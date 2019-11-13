@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/lostwaffle26/chat/issues"
   },
-  "homepage": "https://github.com/lostwaffle26/chat#readme"
+  "homepage": "https://github.com/lostwaffle26/chat#readme",
+  "dependencies": {
+    "socket.io": "^2.3.0"
+  }
 }

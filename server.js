@@ -14,12 +14,17 @@ fs.readFile('./index.html', 'utf8', (err, data) => {
 
         let messages = [];
         io.on('connection', client => {
-            client.on('firstConnection', () => client.emit('message', messages));
+
+            client.on('chat message', function(messages){
+            io.emit('chat message', messages); 
+            });
+
 
             client.on('message', data => {
                 messages.push(data);
                 io.emit('message', messages);
             });
+            
         });
 
         server.listen(3000);
